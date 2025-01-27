@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI性格测试 | 探索你的性格类型</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MBTI测试</div>
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="test.html">开始测试</a></li>
+                <li><a href="types.html">性格类型</a></li>
+                <li><a href="about.html">关于</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button class="login-btn" onclick="window.location.href='login.html'">登录</button>
+                <button class="register-btn" onclick="window.location.href='register.html'">注册</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-background"></div>
+            <div class="hero-content">
+                <div class="profile-container">
+                    <div class="profile-circle">
+                        <img src="images/001.png" alt="Profile" class="profile-image">
+                    </div>
+                    <div class="social-icons">
+                        <a href="types.html" class="social-icon intj" title="INTJ - 建筑师">
+                            <span>INTJ</span>
+                        </a>
+                        <a href="types.html" class="social-icon enfp" title="ENFP - 活动家">
+                            <span>ENFP</span>
+                        </a>
+                        <a href="types.html" class="social-icon infj" title="INFJ - 提倡者">
+                            <span>INFJ</span>
+                        </a>
+                    </div>
+                </div>
+                <h1>探索你的性格类型</h1>
+                <p>通过MBTI测试，了解真实的自己</p>
+                <button class="start-btn" onclick="window.location.href='test.html'">开始测试</button>
+            </div>
+        </section>
+
+       
+
+        <!-- 添加历史介绍部分 -->
+        <section class="history-section">
+            <div class="history-container">
+                <h2>MBTI的起源与发展</h2>
+                <div class="history-content">
+                    <p class="history-intro">
+                        基于瑞士心理学家卡尔・荣格在 1913 年提出的外倾（E）和内倾（I）两种态度类型，以及 1921 年提出的感觉（S）、直觉（N）、思维（T）和情感（F）四种功能类型理论。1942 年，美国的凯瑟琳・库克・布里格斯和女儿伊莎贝尔・布里格斯・迈尔斯在此基础上提出该测试体系，旨在帮助女性找出就业倾向。经 70 多年实践发展，成为常见人格测试，在全球广泛应用于职业规划和专业选择等领域。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 在history-section后添加 -->
+        <section class="mbti-dimensions">
+            <div class="dimensions-container">
+                <h2>MBTI维度说明</h2>
+                <div class="dimensions-grid">
+                    <!-- 第一行：E/I, S/N -->
+                    <div class="dimension-card">
+                        <div class="dimension-letter">E</div>
+                        <h3>外向</h3>
+                        <p>喜欢群体活动，喜欢多种类型的任务，快节奏完成，擅长多线程工作</p>
+                    </div>
+                    <div class="dimension-card">
+                        <div class="dimension-letter">S</div>
+                        <h3>实感</h3>
+                        <p>现实主义，注重事实和细节，用已经有的经验和技能解决问题</p>
+                    </div>
+                    
+                    <!-- 第二行：I/N -->
+                    <div class="dimension-card">
+                        <div class="dimension-letter">I</div>
+                        <h3>内向</h3>
+                        <p>喜欢独处，倾向按照自己的节奏来完成任务，一次只专注一件事</p>
+                    </div>
+                    <div class="dimension-card">
+                        <div class="dimension-letter">N</div>
+                        <h3>直觉</h3>
+                        <p>喜欢宏观的思考，未来的可能性，有洞察，喜欢用创新的方法解决问题</p>
+                    </div>
+                    
+                    <!-- 第三行：T/F -->
+                    <div class="dimension-card">
+                        <div class="dimension-letter">T</div>
+                        <h3>思考</h3>
+                        <p>倾向用逻辑分析来做决策，能客观的判断优缺点，喜欢公平、公正</p>
+                    </div>
+                    <div class="dimension-card">
+                        <div class="dimension-letter">J</div>
+                        <h3>判断</h3>
+                        <p>更喜欢有序理、有准备的工作，擅长制定并执行计划，大部分规定</p>
+                    </div>
+                    
+                    <!-- 第四行：F/P -->
+                    <div class="dimension-card">
+                        <div class="dimension-letter">F</div>
+                        <h3>情感</h3>
+                        <p>比较感性，容易合作，倾向基于个人价值来决策，并考虑他人的感受</p>
+                    </div>
+                    <div class="dimension-card">
+                        <div class="dimension-letter">P</div>
+                        <h3>知觉</h3>
+                        <p>喜欢多种可能性，倾向于随机、弹性的行动，以为制定的计划可能会变</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>联系我们</h3>
+                <div class="contact-info">
+                    <p>作者：XXX</p>
+                    <p>联系电话：666-66666666</p>
+                    <p>电子邮箱：666@qq.com</p>
+                    <p>联系地址：666XXXXXX</p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h3>MBTI性格测试</h3>
+                <div class="footer-description">
+                    <p>探索你的性格类型</p>
+                    <p>了解真实的自己</p>
+                    <p>发现职业发展方向</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

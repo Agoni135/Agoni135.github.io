@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI测试页面</title>
+    <link rel="stylesheet" href="test-style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MBTI测试</div>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="test.html">开始测试</a></li>
+                <li><a href="types.html">性格类型</a></li>
+                <li><a href="about.html">关于</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button class="login-btn" onclick="window.location.href='login.html'">登录</button>
+                <button class="register-btn" onclick="window.location.href='register.html'">注册</button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <div class="test-container">
+            <div class="test-header">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <span class="question-counter">1/28</span>
+                </div>
+            </div>
+            
+            <div class="question-area">
+                <h2 id="question-text"></h2>
+                <div class="options">
+                    <button class="option-btn" data-value="A"></button>
+                    <button class="option-btn" data-value="B"></button>
+                </div>
+                <div class="question-nav">
+                    <button class="nav-btn prev-btn" disabled>上一题</button>
+                    <button class="nav-btn next-btn" disabled>下一题</button>
+                </div>
+            </div>
+
+            <div class="result-container" style="display: none;">
+                <h2>你的MBTI类型是：<span class="mbti-result"></span></h2>
+                <div class="result-details">
+                    <div class="result-card">
+                        <div class="dimension-score">
+                            <span class="dimension">E</span>
+                            <div class="score-bar">
+                                <div class="score-fill"></div>
+                            </div>
+                            <span class="dimension">I</span>
+                        </div>
+                        <div class="dimension-score">
+                            <span class="dimension">S</span>
+                            <div class="score-bar">
+                                <div class="score-fill"></div>
+                            </div>
+                            <span class="dimension">N</span>
+                        </div>
+                        <div class="dimension-score">
+                            <span class="dimension">T</span>
+                            <div class="score-bar">
+                                <div class="score-fill"></div>
+                            </div>
+                            <span class="dimension">F</span>
+                        </div>
+                        <div class="dimension-score">
+                            <span class="dimension">J</span>
+                            <div class="score-bar">
+                                <div class="score-fill"></div>
+                            </div>
+                            <span class="dimension">P</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>联系我们</h3>
+                <div class="contact-info">
+                    <p>作者：XXX</p>
+                    <p>联系电话：666-66666666</p>
+                    <p>电子邮箱：666@qq.com</p>
+                    <p>联系地址：666XXXXXX</p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h3>MBTI性格测试</h3>
+                <div class="footer-description">
+                    <p>探索你的性格类型</p>
+                    <p>了解真实的自己</p>
+                    <p>发现职业发展方向</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="test.js"></script>
+</body>
+</html> 

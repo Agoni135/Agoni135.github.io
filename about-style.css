@@ -1,0 +1,185 @@
+:root {
+    --primary-dark: #1a1f35;
+    --primary-light: #2a3149;
+    --accent-blue: #4f9cff;
+    --text-primary: #ffffff;
+    --text-secondary: #b8c2cc;
+    --card-bg: rgba(42, 49, 73, 0.7);
+}
+
+.about-main {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
+    min-height: 100vh;
+}
+
+/* 英雄区域样式 */
+.hero-section {
+    height: 60vh;
+    background-image: url('images/about-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 31, 53, 0.7);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(79, 156, 255, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+}
+
+/* 应用场景区域 */
+.applications-section {
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.applications-section h2 {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.applications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.application-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(79, 156, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.application-card:hover {
+    transform: translateY(-10px);
+}
+
+.application-card .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.application-card h3 {
+    color: var(--accent-blue);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.application-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* 手风琴区域 */
+.accordion-section {
+    padding: 6rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.accordion-section h2 {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.accordion-item {
+    background: var(--card-bg);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border: 1px solid rgba(79, 156, 255, 0.2);
+}
+
+.accordion-header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background: rgba(79, 156, 255, 0.1);
+}
+
+.accordion-header h3 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.accordion-icon {
+    color: var(--accent-blue);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.accordion-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.accordion-item.active .accordion-content {
+    padding: 1.5rem;
+    max-height: 500px;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .applications-grid {
+        grid-template-columns: 1fr;
+    }
+} 

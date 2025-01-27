@@ -1,0 +1,648 @@
+:root {
+    --primary-color: #6c63ff;
+    --secondary-color: #4CAF50;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 添加背景图片和渐变效果 */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/001.png'); /* 替换为你的背景图片路径 */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15; /* 调整透明度 */
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.start-btn {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    margin-top: 2rem;
+}
+
+.start-btn:hover {
+    transform: translateY(-2px);
+    background-color: #5651d8;
+}
+
+.test-section {
+    display: none;
+    min-height: 100vh;
+    padding: 80px 20px;
+}
+
+.question-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.option-btn {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: 2px solid var(--primary-color);
+    background: white;
+    color: var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.option-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #eee;
+    border-radius: 5px;
+    margin-top: 2rem;
+}
+
+.progress {
+    width: 5%;
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 5px;
+    transition: width 0.3s;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.login-btn, .register-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.login-btn {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.register-btn {
+    background: var(--primary-color);
+    border: none;
+    color: white;
+}
+
+.login-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.register-btn:hover {
+    background: #5651d8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        padding: 1rem 3%;
+    }
+    
+    nav ul {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    
+    nav ul li {
+        margin: 0 1rem;
+    }
+    
+    .auth-buttons {
+        margin-left: auto;
+    }
+
+    .profile-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .social-icons {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-buttons {
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+        order: 4;
+    }
+    
+    nav ul li {
+        margin: 0 0.5rem;
+    }
+}
+
+/* 添加Font Awesome图标库的CDN链接到HTML的head部分 */
+.profile-container {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.profile-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    background: white;
+    padding: 5px;
+    box-shadow: 0 0 20px rgba(108, 99, 255, 0.2);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.social-icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: absolute;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.social-icon span {
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.social-icon.intj {
+    background: #2c3e50;
+    color: white;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.social-icon.enfp {
+    background: #e67e22;
+    color: white;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.social-icon.infj {
+    background: #8e44ad;
+    color: white;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.social-icon:hover {
+    transform: scale(1.1) translate(-60px, -60px);
+}
+
+.social-icon.intj:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.social-icon.enfp:hover {
+    transform: translate(50%, -50%) scale(1.1);
+}
+
+.social-icon.infj:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.social-icon.intj::after {
+    left: 50%;
+    bottom: -30px;
+    transform: translateX(-50%);
+}
+
+.social-icon.enfp::after {
+    left: 50%;
+    bottom: -30px;
+    transform: translateX(-50%);
+}
+
+.social-icon.infj::after {
+    left: 50%;
+    bottom: -30px;
+    transform: translateX(-50%);
+}
+
+/* 添加提示框样式 */
+.social-icon::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.social-icon:hover::after {
+    opacity: 1;
+}
+
+/* 添加动画效果 */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.profile-circle {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* 历史部分样式 */
+.history-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.history-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.history-container h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.history-content {
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    padding: 0 20px;
+}
+
+.history-intro {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    text-align: justify;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 添加渐入动画 */
+.history-intro {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .history-content {
+        margin-bottom: 3rem;
+    }
+    
+    .history-intro {
+        font-size: 1rem;
+        padding: 1.5rem;
+    }
+}
+
+/* MBTI维度说明样式 */
+.mbti-dimensions {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+}
+
+.dimensions-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dimensions-container h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.dimensions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 0 20px;
+}
+
+.dimension-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s ease;
+}
+
+.dimension-card:hover {
+    transform: translateY(-5px);
+}
+
+.dimension-letter {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+}
+
+/* 为不同字母设置不同的背景色 */
+.dimension-card:nth-child(1) .dimension-letter { background-color: #3498db; } /* E */
+.dimension-card:nth-child(2) .dimension-letter { background-color: #2ecc71; } /* S */
+.dimension-card:nth-child(3) .dimension-letter { background-color: #34495e; } /* I */
+.dimension-card:nth-child(4) .dimension-letter { background-color: #9b59b6; } /* N */
+.dimension-card:nth-child(5) .dimension-letter { background-color: #e74c3c; } /* T */
+.dimension-card:nth-child(6) .dimension-letter { background-color: #f1c40f; } /* J */
+.dimension-card:nth-child(7) .dimension-letter { background-color: #e91e63; } /* F */
+.dimension-card:nth-child(8) .dimension-letter { background-color: #ff9800; } /* P */
+
+.dimension-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.dimension-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .dimensions-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .dimension-card {
+        padding: 1.5rem;
+    }
+    
+    .dimension-letter {
+        font-size: 2rem;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .dimension-card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* 页脚样式 */
+.footer {
+    background: rgba(26, 31, 53, 0.95);
+    padding: 3rem 0;
+    color: #ffffff;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.footer-left, .footer-right {
+    flex: 1;
+}
+
+/* 新增：右侧内容右对齐 */
+.footer-right {
+    text-align: right;
+}
+
+.footer h3 {
+    color: #4f9cff;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.contact-info p {
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.footer-description p {
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.contact-info p:hover,
+.footer-description p:hover {
+    opacity: 1;
+}
+
+/* 修改移动端样式 */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    /* 在移动端保持右对齐 */
+    .footer-right {
+        text-align: right;
+    }
+}
+
+/* 添加渐变叠加层 */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(79, 156, 255, 0.1) 100%);
+    z-index: 0;
+}
